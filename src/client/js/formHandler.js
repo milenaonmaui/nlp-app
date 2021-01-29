@@ -1,15 +1,12 @@
-console.log("loaded formHandler.js")
 function handleSubmit(event) {
     event.preventDefault()
+    //reset form
     document.getElementById('data').innerHTML = "";
-    // check what text was put into the form field
     const url = document.getElementById('url').value;
     const text = document.getElementById('textEntry').value;
-    const loader = document.getElementById('loader')
-    loader.removeAttribute('hidden')
-    //checkForName(formText)
+    
     const data = {url: '', text: ''};
-    console.log("::: URL :::", url)
+    
     if (url !== "") {
         data.url = url
     } else if (text !== "") {
@@ -18,9 +15,8 @@ function handleSubmit(event) {
         document.getElementById('data').innerHTML = "Please enter valid URL or text"
         return false;
     }
-
-    console.log("Data", data)
-    console.log(JSON.stringify(data))
+    const loader = document.getElementById('loader')
+    loader.removeAttribute('hidden')
 
     fetch('http://localhost:8080/', {
         method: 'POST',
@@ -30,7 +26,7 @@ function handleSubmit(event) {
         },
         body: JSON.stringify(data)
     })
-    //fetch('http://localhost:8080/test')
+
     .then(res => res.json())
     .then(json => updateUI(json))
 }
