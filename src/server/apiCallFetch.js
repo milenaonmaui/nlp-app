@@ -1,7 +1,7 @@
 const fetch = require('node-fetch')
 
 const getSentimentAnalysis = async(url='', key) => {
-    console.log('In getData')
+    console.log('In getSentimentanalysis, URL', url)
     const fullURL = 'https://api.meaningcloud.com/sentiment-2.1?key=' + key +'&lang=en&url=' + url;
     const res = await fetch(fullURL, {
         method: 'POST',

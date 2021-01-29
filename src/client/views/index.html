@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
     <head>
         <meta charset="utf-8">
-        <title>Test</title>
+        <title>NLP App</title>
         <link rel="stylesheet" href="/styles/resets.css">
         <link rel="stylesheet" href="/styles/base.css">
         <link rel="stylesheet" href="/styles/header.css">
@@ -13,31 +13,47 @@
     <body>
 
         <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
+            <div class="headline">
+                <h1>Natural Language Processing App</h1>
             </div>
         </header>
 
         <main>
-            <section>
-                <form class="" onsubmit="return handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return handleSubmit(event)" onsubmit="return handleSubmit(event)">
-                </form>
+            <section id="description">
+                <p>Perform sentiment analysis of texts from different sources such as articles or blogs on the web or manually entered text below. 
+                    The text provided is analyzed to determine if it expresses a positive/negative/neutral sentiment. To find out more visit <a href="https://www.meaningcloud.com/developer/sentiment-analysis/doc/2.1/what-is-sentiment-analysis" target="_blank">Meaning Cloud</a></p>
             </section>
-
             <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
+                <form name="form" id="form" onsubmit="return handleSubmit(event)">
+                    <div class = "entry">
+                      <label for="url">Enter URL of article here:</label>
+                      <input id="url" name="url" placeholder="Enter url here" pattern="(http|https)://.*" title="url starting with http(s)://">
+                    </div>
+                    <div id="separator">
+                        <p><strong>OR</strong></p>
+                    </div>
+                    <div class = "entry">
+                      <label for="textEntry">Enter text here:</label>
+                      <textarea class= "textEntry" id="textEntry" placeholder="Enter text to analyze here" rows="9" cols="50"></textarea>
+                    </div>
+                    <div class = "entry">
+                      <input id="analyze" type="submit" value="Analyze">
+                    </div>
+                  </form>
+            </section>
+            <div id="notify" class="hidden"></div>
+            <section>
+                <h2>Analysis Results</h2>
+                <div id="results">
+                    DISAGREEMENT
+                </div>
             </section>
         </main>
 
         <footer>
-            <p>This is a footer</p>
+            <p>Created by Milena Kari</p>
         </footer>
-
+        <script src="/js/formHandler.js" type="text/javascript"></script>
+        <!--<script src="/js/validateForm.js" type="text/javascript"></script>-->
     </body>
 </html>

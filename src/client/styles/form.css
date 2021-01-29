@@ -1,12 +1,39 @@
-form {
+form, #results {
     border: 1px solid #545454;
     border-radius: 3px;
     padding: 40px;
 }
 
-input {
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input, textarea {
+    background-color: rgb(238, 208, 208);
     padding: 5px 20px;
     width: 100%;
     line-height: 16px;
     margin: 10px 0;
+}
+
+input:invalid {
+    border: 2px solid purple;
+}
+
+#analyze{
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    background: #3e63b4;
+    color: #f0d43a;
+    font-size: 1.5em;
+    padding: 0.5em;
+    border: none;
+    box-shadow: 2px 4px 5px #444;
+}
+
+#separator {
+    margin: 1em;
+    text-align: center;
 }
