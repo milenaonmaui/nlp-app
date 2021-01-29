@@ -34,7 +34,7 @@ app.listen(8080, function () {
 
 app.post('/', function (req, res) {
     console.log("In POST with body", req.body)
-    const url = req.body.url;
-    getSentimentAnalysis(url, key)
+    //const url = req.body.url;
+    getSentimentAnalysis(req.body, key)
     .then(resp => res.send(resp))
 })
