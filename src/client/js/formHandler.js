@@ -1,4 +1,5 @@
 function handleSubmit(event) {
+    console.log("Inside Form Handler")
     event.preventDefault()
     //reset form
     document.getElementById('data').innerHTML = "";
@@ -18,7 +19,7 @@ function handleSubmit(event) {
     const loader = document.getElementById('loader')
     loader.removeAttribute('hidden')
 
-    fetch('http://localhost:8080/', {
+    fetch('http://localhost:8081/', {
         method: 'POST',
         credentials: 'same-origin',
         headers: {
@@ -28,7 +29,7 @@ function handleSubmit(event) {
     })
 
     .then(res => res.json())
-    .then(json => updateUI(json))
+    .then(json => Client.updateUI(json))
 }
 
-//export { handleSubmit }
+export { handleSubmit }

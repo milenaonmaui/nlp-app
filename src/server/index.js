@@ -20,7 +20,7 @@ const cors = require('cors')
 app.use(cors())
 
 //app.use(express.static('dist'))
-app.use(express.static('src/client/'))
+app.use(express.static('dist'))
 
 app.get('/', function (req, res) {
     // res.sendFile('dist/index.html')
@@ -28,13 +28,12 @@ app.get('/', function (req, res) {
 })
 
 // designates what port the app will listen to for incoming requests
-app.listen(8080, function () {
-    console.log('NLP app listening on port 8080!')
+app.listen(8081, function () {
+    console.log('NLP app listening on port 8081!')
 })
 
 app.post('/', function (req, res) {
     console.log("In POST with body", req.body)
-    //const url = req.body.url;
     getSentimentAnalysis(req.body, key)
     .then(resp => res.send(resp))
 })

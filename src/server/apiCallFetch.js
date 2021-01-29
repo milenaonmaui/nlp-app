@@ -32,6 +32,7 @@ const getSentimentAnalysis = async(data={}, key) => {
 
     } catch(error) {
         console.log(error)
+        return {error: error}
     }
 }
 

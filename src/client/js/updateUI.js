@@ -10,4 +10,4 @@
         document.getElementById('url').value = "";
    }
 
-//export { updateUI }
+export { updateUI }
