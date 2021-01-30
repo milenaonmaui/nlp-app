@@ -1,5 +1,11 @@
+$background-color: #bbdfc8;
+$secondary-color: #75cfb8;
+$text-color: #f0e5d8;
+$button-color: #23689b;
+
 footer {
-    border-top: solid purple 2px;
+    background-color: $secondary-color;
+    border-top: solid $button-color 2px;
     text-align: center;
     padding: 2em;
 }
