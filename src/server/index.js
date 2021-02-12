@@ -4,6 +4,7 @@ dotenv.config();
 //https://api.meaningcloud.com/sentiment-2.1?key=<API_KEY>&of=json&txt=Main%20dishes%20were%20quite%20good%2C%20but%20desserts%20were%20too%20sweet%20for%20me.&lang=en
 //const url = "https://www.cnn.com/politics/live-news/biden-presidency-trump-impeachment-1-27-21/index.html"
 const key = process.env.API_KEY;
+const port = process.env.PORT || 8081
 var path = require('path')
 const express = require('express')
 //onst mockAPIResponse = require('./mockAPI.js')
@@ -28,8 +29,8 @@ app.get('/', function (req, res) {
 })
 
 // designates what port the app will listen to for incoming requests
-app.listen(8081, function () {
-    console.log('NLP app listening on port 8081!')
+app.listen(port, function () {
+    console.log(`NLP app listening on port ${port}!`)
 })
 
 app.post('/', function (req, res) {
