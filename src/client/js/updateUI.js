@@ -1,5 +1,6 @@
 
    function updateUI(res={}){
+      console.log("Inside update UI with data ", res)
         document.getElementById('loader').setAttribute('hidden', '')
         document.getElementById('data').innerHTML = '<p><b>Agreement: </b>'+res.agreement+'</p>'+
         '<p><b>Subjectivity: </b>'+res.subjectivity+'</p>' +

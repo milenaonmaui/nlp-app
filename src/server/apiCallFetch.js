@@ -13,14 +13,14 @@ const getSentimentAnalysis = async(data={}, key) => {
         fullURL += 'txt=' + encodeURI(data.text)
         console.log(fullURL)
     }
-    const res = await fetch(fullURL, {
+    const resp = await fetch(fullURL, {
         method: 'POST',
         credentials: 'same-origin',
         headers: {
         }
     });
     try {
-        const data = await res.json();
+        const data = await resp.json();
         console.log(data)
         return {
             agreement: data.agreement,

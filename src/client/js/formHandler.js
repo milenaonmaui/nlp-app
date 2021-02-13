@@ -18,8 +18,9 @@ function handleSubmit(event) {
     }
     const loader = document.getElementById('loader')
     loader.removeAttribute('hidden')
-
-    fetch('http://localhost:8081/', {
+   
+    fetch('/data', {
+        
         method: 'POST',
         credentials: 'same-origin',
         headers: {
@@ -27,8 +28,7 @@ function handleSubmit(event) {
         },
         body: JSON.stringify(data)
     })
-
-    .then(res => res.json())
+    .then(response => response.json())
     .then(json => Client.updateUI(json))
 }
 

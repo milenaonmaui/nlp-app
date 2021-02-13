@@ -25,7 +25,7 @@ app.use(express.static('dist'))
 
 app.get('/', function (req, res) {
     // res.sendFile('dist/index.html')
-    res.sendFile(path.resolve('src/client/views/index.html'))
+    res.sendFile(path.resolve('dist/index.html'))
 })
 
 // designates what port the app will listen to for incoming requests
@@ -33,8 +33,10 @@ app.listen(port, function () {
     console.log(`NLP app listening on port ${port}!`)
 })
 
-app.post('/', function (req, res) {
+app.post('/data', function (req, res) {
     console.log("In POST with body", req.body)
     getSentimentAnalysis(req.body, key)
-    .then(resp => res.send(resp))
+    .then(resp => {
+        console.log("Sending response ", resp)
+        res.send(resp)})
 })
